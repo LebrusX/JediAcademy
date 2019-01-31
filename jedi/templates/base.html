@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+
+</head>
+    <body style="background: white">
+        {% block content %}
+        {% endblock %}
+
+        {% block footer %}
+            <hr>
+            <center>
+                <p>For help, please, contact customer support <a href='http://sw.helpalderaan.star'>on Alderaan</a></p>
+            </center>
+        {% endblock %}
+    </body>
+</html>

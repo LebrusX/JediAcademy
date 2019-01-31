@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Form{% endblock %}
+
+<body>
+    {% block content %}
+    <h3>
+        <div style="text-align: center;">
+            <strong>Please, fill out the form</strong>
+        </div>
+    </h3>
+    <hr>
+    <div class="jumbotron">
+        <div class="container">
+            <div style="text-align: center;">
+                <form action="{% url 'jedi:resume' %}" method="post">
+                    {% csrf_token %}
+                    Your name: {{ form.name }} <br><br>
+                    Your age: {{ form.age }} <br><br>
+                    Your homeplanet: {{ form.homeplanet }} <br><br>
+                    Your e-mail: {{ form.email }} <br><br>
+                    <input type="submit" value="Ok"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+

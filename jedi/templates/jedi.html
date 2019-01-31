@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Jedi{% endblock %}
+
+<body>
+    {% block content %}
+    <h3>
+        <center>
+            <strong>Choose yourself, master</strong>
+        </center>
+    </h3>
+    <hr>
+        <div class="jumbotron">
+            <div class="container">
+                <center>
+                    {% if jedi_list %}
+                        {% for name in jedi_list %}
+                            <p>
+                                <form action="{% url 'jedi:list' name.id %}">
+                                    <button type="submit"> {{ name.name }} </button>
+                                </form>
+                            </p>
+                        {% endfor %}
+                    {% endif %}
+                </center>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+
